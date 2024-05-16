@@ -2,7 +2,6 @@ import numpy as np, sympy as sp
 from sympy import *
 from IPython.display import display, Math
 
-# making it pretty
 def format_complex_number(val):
     """Formats a complex number into a more readable form for LaTeX."""
     if val.imag == 0:
@@ -30,3 +29,8 @@ pauli = {'Oz' : np.array([[1,0],[0,-1]]),
          'Ox' : np.array([[0,1],[1,0]]),
          'Oy' : np.array([[0,0-1j],[0+1j,0]])
          }
+
+t, p = symbols('t p')
+
+P = Matrix([[cos(t), sin(t)*cos(p) - I*sin(t)*sin(p)],
+            [sin(t)*cos(p) + I*sin(t)*sin(p), -cos(t)]])
