@@ -17,6 +17,7 @@ def format_complex_number(val):
         return f"{val.real}+{val.imag}i" 
 
 def numpy_array_to_latex(array):
+    ''' converts any numpy array, complex or real, to a Latex pmatrix'''
     latex_str = r'\begin{pmatrix}'
     for row in array:
         row_str = ' & '.join(format_complex_number(val) for val in row)
@@ -25,10 +26,14 @@ def numpy_array_to_latex(array):
     latex_str += r'\end{pmatrix}'
     return latex_str
 
-pauli = {'Oz' : np.array([[1,0],[0,-1]]),
-         'Ox' : np.array([[0,1],[1,0]]),
-         'Oy' : np.array([[0,0-1j],[0+1j,0]])
+sigma = {'z' : np.array([[1,0],[0,-1]]),
+         'x' : np.array([[0,1],[1,0]]),
+         'y' : np.array([[0,0-1j],[0+1j,0]])
          }
+
+spin = {'u': np.array([1,0]).reshape(-1,1),
+               'd': np.array([0,1]).reshape(-1,1)
+               }
 
 t, p = symbols('t p')
 
