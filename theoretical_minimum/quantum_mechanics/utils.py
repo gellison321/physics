@@ -1,6 +1,7 @@
 import numpy as np, sympy as sp
 from sympy import *
 from IPython.display import display, Math
+import itertools
 
 def format_complex_number(val):
     """Formats a complex number into a more readable form for LaTeX."""
@@ -32,8 +33,8 @@ sigma = {'z' : np.array([[1,0],[0,-1]]),
          }
 
 spin = {'u': np.array([1,0]).reshape(-1,1),
-               'd': np.array([0,1]).reshape(-1,1)
-               }
+        'd': np.array([0,1]).reshape(-1,1)
+        }
 
 t, p = symbols('t p')
 
