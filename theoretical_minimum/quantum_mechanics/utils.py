@@ -2,6 +2,8 @@ import numpy as np, sympy as sp
 from sympy import *
 from IPython.display import display, Math
 import itertools
+from qutip import *
+import matplotlib.pyplot as plt
 
 def format_complex_number(val):
     """Formats a complex number into a more readable form for LaTeX."""
