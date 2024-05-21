@@ -42,3 +42,6 @@ t, p = symbols('t p')
 
 P = Matrix([[cos(t), sin(t)*cos(p) - I*sin(t)*sin(p)],
             [sin(t)*cos(p) + I*sin(t)*sin(p), -cos(t)]])
+
+def lprint(s):
+    return display(Math(s))
