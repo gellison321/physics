@@ -20,13 +20,21 @@ def format_complex_number(val):
         return f"{val.real}+{val.imag}i" 
 
 def numpy_array_to_latex(array):
-    ''' converts any numpy array, complex or real, to a Latex pmatrix'''
-    latex_str = r'\begin{pmatrix}'
-    for row in array:
-        row_str = ' & '.join(format_complex_number(val) for val in row)
-        latex_str += row_str + r' \\ '
-    latex_str = latex_str.rstrip(r' \\ ')  # Remove the last row separator
-    latex_str += r'\end{pmatrix}'
+    ''' Converts any numpy array, complex or real, to a Latex pmatrix'''
+
+    array = np.array(array)
+
+    if array.ndim == 1:
+        latex_str = r'\begin{pmatrix}' + ' & '.join(format_complex_number(val) for val in array) + r'\end{pmatrix}'
+
+    else:
+
+        latex_str = r'\begin{pmatrix}'
+        for row in array:
+            row_str = ' & '.join(format_complex_number(val) for val in row)
+            latex_str += row_str + r' \\ '
+        latex_str = latex_str.rstrip(r' \\ ')  # Remove the last row separator
+        latex_str += r'\end{pmatrix}'
     return latex_str
 
 sigma = {'z' : np.array([[1,0],[0,-1]]),
