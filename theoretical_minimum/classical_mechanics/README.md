@@ -4,4 +4,4 @@ The motivation is to replicate the other answer guides available, and contribute
 
 Credit to [M. Bivert](https://tales.mbivert.com/ttm/cm/L02E04.pdf) for their detailed and interesting answer guide. 
 
-Credit to OpenAI and the GPT 4 model. Like all models, it is usually wrong, but always useful.
+Credit to OpenAI and the GPT 4 model. Like all models, it is usually wrong, but usually useful.
